@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 	<!-- Required meta tags -->
 	<meta charset="utf-8">
@@ -19,17 +20,64 @@
 
 <body>
 	<div class="container">
-		<!-- Button trigger modal -->
-		<button type="button" class="btn btn-primary mt-5" data-toggle="modal" data-target="#exampleModal">
-			Abrir PDF
-		</button>
+		<div class="mt-4 mb-2">
+			<h3>Anexos</h3>
+		</div>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nome</th>
+					<th scope="col">Tipo</th>
+					<th scope="col">Link</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th scope="row">1</th>
+					<td>bitcoin</td>
+					<td><i class="far fa-file-pdf fa-lg"></i> PDF</td>
+					<td>
+						<a href="#pdfModal" data-toggle="modal"><span class="badge badge-info">Abrir</span></a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">2</th>
+					<td>sbc_template</td>
+					<td><i class="far fa-file-word fa-lg"></i> Word</td>
+					<td>
+						<a href="#docModal" data-toggle="modal"><span class="badge badge-info">Docs</span></a>
+						<a href="#doc2Modal" data-toggle="modal"><span class="badge badge-info">Office 365</span></a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">3</th>
+					<td>projeto</td>
+					<td><i class="far fa-file-excel fa-lg"></i> Excel</td>
+					<td>
+						<a href="#excelModal" data-toggle="modal"><span class="badge badge-info">Docs</span></a>
+						<a href="#excel2Modal" data-toggle="modal"><span class="badge badge-info">Office 365</span></a>
+					</td>
+				</tr>
+				<tr>
+					<th scope="row">4</th>
+					<td>planta</td>
+					<td><i class="far fa-file-image fa-lg"></i> Imagem</td>
+					<td>
+						<a href="#imgModal" data-toggle="modal"><span class="badge badge-info">Abrir</span></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
 
-		<!-- Modal -->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"  data-backdrop="static">
+		<!-- Modal PDF -->
+		<div class="modal fade" id="pdfModal" tabindex="-1" role="dialog" aria-labelledby="pdfModalLabel"
+			aria-hidden="true" data-backdrop="static">
 			<div class="modal-dialog modal-xl" role="document">
 				<div class="modal-content-custom">
 					<div class="modal-header">
-						<span class="fas fa-times close anexo-close-icon mr-4 mt-1" data-dismiss="modal" aria-label="Close" aria-hidden="true"></span>
+						<span class="fas fa-times close anexo-close-icon mr-4 mt-1" data-dismiss="modal"
+							aria-label="Close" aria-hidden="true"></span>
 					</div>
 
 					<div id="pdf"></div>
@@ -37,7 +85,7 @@
 					<div class="modal-footer-custom">
 						<h4>bitcoin.pdf</h4>
 						<p>
-							<a href="pdf/bitcoin.pdf" target="_blank">
+							<a href="documentos/bitcoin.pdf" target="_blank">
 								<i class="fas fa-external-link-alt"></i> Abrir em uma nova guia
 							</a>
 						</p>
@@ -45,7 +93,134 @@
 				</div>
 			</div>
 		</div>
-	</div>
+
+		<!-- Modais para documentos do office seriam reduzidos a somente um modal, através de um loop na linguagem de programação -->
+		<!-- Modal Google Docs Word-->
+		<div class="modal fade" id="docModal" tabindex="-1" role="dialog" aria-labelledby="docModalLabel"
+			aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content-custom">
+					<div class="modal-header">
+						<span class="fas fa-times close anexo-close-icon mr-4 mt-1" data-dismiss="modal"
+							aria-label="Close" aria-hidden="true"></span>
+					</div>
+
+					<iframe id="frame_doc" frameborder="0"
+						src="https://docs.google.com/viewer?url=https://markeninja.com.br/arquivos/Rebel%20-%20Lista%20com%20as%2010%20melhores%20criptomedas.docx&embedded=true"></iframe>
+
+					<div class="modal-footer-custom">
+						<h4>sbc_template.doc</h4>
+						<p>
+							<a href="https://markeninja.com.br/arquivos/Rebel%20-%20Lista%20com%20as%2010%20melhores%20criptomedas.docx" target="_blank">
+								<i class="fas fa-external-link-alt"></i> Abrir em uma nova guia
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Office 365 Word-->
+		<div class="modal fade" id="doc2Modal" tabindex="-1" role="dialog" aria-labelledby="docModalLabel"
+			aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content-custom">
+					<div class="modal-header">
+						<span class="fas fa-times close anexo-close-icon mr-4 mt-1" data-dismiss="modal"
+							aria-label="Close" aria-hidden="true"></span>
+					</div>
+
+					<iframe id="frame_doc" frameborder="0"
+						src="http://view.officeapps.live.com/op/view.aspx?src=https://markeninja.com.br/arquivos/Rebel%20-%20Lista%20com%20as%2010%20melhores%20criptomedas.docx&embedded=true"></iframe>
+
+					<div class="modal-footer-custom">
+						<h4>sbc_template.doc</h4>
+						<p>
+							<a href="https://markeninja.com.br/arquivos/Rebel%20-%20Lista%20com%20as%2010%20melhores%20criptomedas.docx" target="_blank">
+								<i class="fas fa-external-link-alt"></i> Abrir em uma nova guia
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Excel -->
+		<div class="modal fade" id="excelModal" tabindex="-1" role="dialog" aria-labelledby="excelModalLabel"
+			aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content-custom">
+					<div class="modal-header">
+						<span class="fas fa-times close anexo-close-icon mr-4 mt-1" data-dismiss="modal"
+							aria-label="Close" aria-hidden="true"></span>
+					</div>
+
+					<iframe id="frame_doc" frameborder="0"
+						src="https://docs.google.com/viewer?url=http://webitcoin.com.br/wp-content/uploads/2018/09/Arbitragem.xlsm&embedded=true"></iframe>
+
+					<div class="modal-footer-custom">
+						<h4>projetos.xlsx</h4>
+						<p>
+							<a href="http://webitcoin.com.br/wp-content/uploads/2018/09/Arbitragem.xlsm" target="_blank">
+								<i class="fas fa-external-link-alt"></i> Abrir em uma nova guia
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Office 365 Excel -->
+		<div class="modal fade" id="excel2Modal" tabindex="-1" role="dialog" aria-labelledby="excelModalLabel"
+			aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content-custom">
+					<div class="modal-header">
+						<span class="fas fa-times close anexo-close-icon mr-4 mt-1" data-dismiss="modal"
+							aria-label="Close" aria-hidden="true"></span>
+					</div>
+
+					<iframe id="frame_doc" frameborder="0"
+						src="http://view.officeapps.live.com/op/view.aspx?src=http://webitcoin.com.br/wp-content/uploads/2018/09/Arbitragem.xlsm&embedded=true"></iframe>
+
+					<div class="modal-footer-custom">
+						<h4>projetos.xlsx</h4>
+						<p>
+							<a href="http://webitcoin.com.br/wp-content/uploads/2018/09/Arbitragem.xlsm" target="_blank">
+								<i class="fas fa-external-link-alt"></i> Abrir em uma nova guia
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Img -->
+		<div class="modal fade" id="imgModal" tabindex="-1" role="dialog" aria-labelledby="imgModalLabel"
+			aria-hidden="true" data-backdrop="static">
+			<div class="modal-dialog modal-xl" role="document">
+				<div class="modal-content-custom">
+					<div class="modal-header">
+						<span class="fas fa-times close anexo-close-icon mr-4 mt-1" data-dismiss="modal"
+							aria-label="Close" aria-hidden="true"></span>
+					</div>
+
+					<div class="modal-body text-center">
+						<img src="http://localhost:5500/docs-modal/documentos/planta.jpg" alt="">
+					</div>
+
+					<div class="modal-footer-custom">
+						<h4>planta.jpg</h4>
+						<p>
+							<a href="documentos/planta.jpg" target="_blank">
+								<i class="fas fa-external-link-alt"></i> Abrir em uma nova guia
+							</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div><!-- End Container -->
 
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -60,6 +235,7 @@
 
 	<!-- Plugin PDF Object -->
 	<script src="js/pdfobject.min.js"></script>
-	<script>PDFObject.embed("pdf/bitcoin.pdf", "#pdf");</script>
+	<script>PDFObject.embed("documentos/bitcoin.pdf", "#pdf");</script>
 </body>
+
 </html>

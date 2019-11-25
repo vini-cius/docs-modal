@@ -1,5 +1,9 @@
 .pdfobject-container {
-    height: 33rem;
+    height: 34rem;
+}
+
+#frame_doc {
+    height: 34rem;
 }
 
 .modal-open .modal {
